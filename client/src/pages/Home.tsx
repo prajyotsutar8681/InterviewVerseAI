@@ -1,15 +1,19 @@
 import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/landing/Hero";
+import Companies from "@/components/landing/Companies";
+import Features from "@/components/landing/Features";
+import HowItWorks from "@/components/landing/HowItWorks";
+import DashboardPreview from "@/components/landing/DashboardPreview";
 
 const Home = () => {
   return (
-    <main className="min-h-screen bg-zinc-950">
+    <main className="bg-[#09090B]">
       <Navbar />
-
-      <section className="flex h-screen items-center justify-center">
-        <h1 className="text-6xl font-bold text-white">
-          InterviewVerse AI
-        </h1>
-      </section>
+      <Hero />
+      <Companies />
+      <Features />
+      <HowItWorks />
+      <DashboardPreview />
     </main>
   );
 };
