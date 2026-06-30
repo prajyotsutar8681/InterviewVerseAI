@@ -1,33 +1,41 @@
 import { Navigate } from "react-router-dom";
+import type { ReactNode } from "react";
 
 import { useAuth } from "@/context/AuthContext";
 
-import type { ReactNode } from "react";
-
-interface ProtectedRouteProps {
+interface Props {
   children: ReactNode;
 }
 
-const ProtectedRoute = ({
-  children,
-}: ProtectedRouteProps) => {
-  const { session, loading } = useAuth();
+const ProtectedRoute = ({ children }: Props) => {
+  const {
+  user,
+  loading,
+} = useAuth();
 
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#09090B]">
-        <h1 className="text-white text-2xl">
-          Loading...
-        </h1>
+
+        <div className="text-center">
+
+          <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-violet-500 border-t-transparent" />
+
+          <p className="mt-6 text-zinc-400">
+            Loading...
+          </p>
+
+        </div>
+
       </div>
     );
   }
 
-  if (!session) {
+ if (!user) {
     return <Navigate to="/login" replace />;
   }
 
-  return children;
+  return <>{children}</>;
 };
 
 export default ProtectedRoute;

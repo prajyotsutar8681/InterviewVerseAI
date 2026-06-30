@@ -1,17 +1,32 @@
 import DashboardLayout from "@/components/layout/DashboardLayout";
 
+import ResumeUploader from "@/components/resume/ResumeUploader";
+import ResumeHistory from "@/components/resume/ResumeHistory";
+
 const Resume = () => {
   return (
     <DashboardLayout>
-      <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-10">
-        <h1 className="text-4xl font-bold text-white">
-          Resume Analyzer
-        </h1>
 
-        <p className="mt-4 text-zinc-400">
-          Upload your resume to receive AI-powered feedback.
-        </p>
+      <div className="space-y-8">
+
+        <div>
+
+          <h1 className="text-4xl font-bold text-white">
+            Resume Analyzer
+          </h1>
+
+          <p className="mt-2 text-zinc-400">
+            Upload your resume and receive AI-powered ATS feedback.
+          </p>
+
+        </div>
+
+        <ResumeUploader />
+
+        <ResumeHistory />
+
       </div>
+
     </DashboardLayout>
   );
 };

@@ -1,59 +1,63 @@
-import { useNavigate } from "react-router-dom";
-import {
-  Mic,
-  FileText,
-  Code2,
-  BarChart3,
-} from "lucide-react";
+import { Link } from "react-router-dom";
+import AnimatedCard from "@/components/common/AnimatedCard";
+
+const actions = [
+  {
+    title: "AI Interview",
+    description: "Practice interviews with AI.",
+    link: "/interview",
+    color: "bg-violet-600",
+  },
+  {
+    title: "Resume Analyzer",
+    description: "Improve your ATS score.",
+    link: "/resume",
+    color: "bg-blue-600",
+  },
+  {
+    title: "Coding Arena",
+    description: "Solve coding challenges.",
+    link: "/coding",
+    color: "bg-green-600",
+  },
+];
 
 const QuickActions = () => {
-  const navigate = useNavigate();
-
-  const cards = [
-    {
-      title: "AI Interview",
-      icon: Mic,
-      path: "/interview",
-    },
-    {
-      title: "Resume Analyzer",
-      icon: FileText,
-      path: "/resume",
-    },
-    {
-      title: "Coding Arena",
-      icon: Code2,
-      path: "/coding",
-    },
-    {
-      title: "Analytics",
-      icon: BarChart3,
-      path: "/analytics",
-    },
-  ];
-
   return (
-    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-      {cards.map((card) => (
-        <button
-          key={card.title}
-          onClick={() => navigate(card.path)}
-          className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-left transition hover:border-violet-500 hover:-translate-y-1"
-        >
-          <card.icon
-            size={34}
-            className="mb-5 text-violet-400"
-          />
+    <div>
 
-          <h2 className="text-xl font-semibold text-white">
-            {card.title}
-          </h2>
+      <h2 className="mb-6 text-2xl font-bold text-white">
+        Quick Actions
+      </h2>
 
-          <p className="mt-2 text-zinc-400">
-            Open Module
-          </p>
-        </button>
-      ))}
+      <div className="grid gap-6 md:grid-cols-3">
+
+        {actions.map((action, index) => (
+          <AnimatedCard
+            key={action.title}
+            delay={index * 0.2}
+          >
+            <Link
+              to={action.link}
+              className="block rounded-2xl border border-zinc-800 bg-zinc-900 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:shadow-xl hover:shadow-violet-500/20"
+            >
+
+              <div
+                className={`mb-4 inline-block rounded-xl px-4 py-2 font-semibold text-white ${action.color}`}
+              >
+                {action.title}
+              </div>
+
+              <p className="text-zinc-400">
+                {action.description}
+              </p>
+
+            </Link>
+          </AnimatedCard>
+        ))}
+
+      </div>
+
     </div>
   );
 };

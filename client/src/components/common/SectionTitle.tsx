@@ -1,0 +1,25 @@
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const SectionTitle = ({
+  title,
+  subtitle,
+}: Props) => {
+  return (
+    <div className="mb-8">
+      <h1 className="text-4xl font-bold text-white">
+        {title}
+      </h1>
+
+      {subtitle && (
+        <p className="mt-2 text-zinc-400">
+          {subtitle}
+        </p>
+      )}
+    </div>
+  );
+};
+
+export default SectionTitle;

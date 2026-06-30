@@ -1,69 +1,72 @@
 import {
   BrainCircuit,
-  FileText,
-  Code2,
-  Mic,
+  Sparkles,
+  ShieldCheck,
+  GraduationCap,
   BarChart3,
-  Target,
+  Rocket,
 } from "lucide-react";
 
 const highlights = [
   {
     icon: BrainCircuit,
-    title: "Gemini AI Interview Engine",
+    title: "AI-Powered Evaluation",
     description:
-      "Practice realistic HR and technical interviews powered by Google's Gemini AI.",
+      "Receive detailed feedback, performance scores, and personalized recommendations powered by Google's Gemini AI.",
   },
   {
-    icon: FileText,
-    title: "ATS Resume Analyzer",
+    icon: GraduationCap,
+    title: "Company-Focused Preparation",
     description:
-      "Upload your resume and receive actionable ATS feedback with keyword suggestions.",
-  },
-  {
-    icon: Code2,
-    title: "Coding Practice Arena",
-    description:
-      "Solve coding problems in a VS Code-like editor with AI-powered feedback.",
-  },
-  {
-    icon: Mic,
-    title: "Voice-Based Mock Interviews",
-    description:
-      "Answer interview questions naturally using your voice for a realistic experience.",
+      "Practice interview questions and coding challenges inspired by leading product and service-based companies.",
   },
   {
     icon: BarChart3,
-    title: "Performance Analytics",
+    title: "Track Your Growth",
     description:
-      "Track interview scores, coding progress, and communication improvements over time.",
+      "Monitor resume scores, coding performance, interview results, and overall career readiness from one dashboard.",
   },
   {
-    icon: Target,
-    title: "Personalized Career Roadmap",
+    icon: Sparkles,
+    title: "Personalized Career Guidance",
     description:
-      "Receive AI-generated recommendations tailored to your target role and current skill level.",
+      "Generate AI-driven learning roadmaps, identify skill gaps, and receive tailored preparation strategies.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Secure Cloud History",
+    description:
+      "Your interview sessions, resume analyses, and coding results are securely stored for future reference.",
+  },
+  {
+    icon: Rocket,
+    title: "Placement Ready Platform",
+    description:
+      "Everything you need—from resume analysis to coding interviews and career coaching—in one modern platform.",
   },
 ];
 
 const PlatformHighlights = () => {
   return (
     <section className="bg-[#09090B] py-28" id="highlights">
+
       <div className="mx-auto max-w-7xl px-6">
 
         <div className="text-center">
 
           <span className="rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-300">
-            Platform Highlights
+            Why Choose InterviewVerse AI?
           </span>
 
           <h2 className="mt-6 text-5xl font-bold text-white">
-            Everything You Need To Prepare Smarter
+            Prepare Smarter, Perform Better
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg text-zinc-400">
-            InterviewVerse AI combines interview preparation, coding practice,
-            resume analysis and AI guidance into one complete platform.
+            InterviewVerse AI combines artificial intelligence,
+            coding practice, resume optimization, analytics,
+            and career guidance into one seamless interview
+            preparation platform.
           </p>
 
         </div>
@@ -71,27 +74,34 @@ const PlatformHighlights = () => {
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
           {highlights.map((item) => (
+
             <div
               key={item.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-violet-500"
+              className="group rounded-3xl border border-zinc-800 bg-zinc-900 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-violet-500 hover:shadow-xl hover:shadow-violet-500/10"
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500">
+
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 transition group-hover:scale-110">
+
                 <item.icon className="h-7 w-7 text-white" />
+
               </div>
 
               <h3 className="text-2xl font-bold text-white">
                 {item.title}
               </h3>
 
-              <p className="mt-4 text-zinc-400">
+              <p className="mt-4 leading-7 text-zinc-400">
                 {item.description}
               </p>
+
             </div>
+
           ))}
 
         </div>
 
       </div>
+
     </section>
   );
 };
