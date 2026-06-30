@@ -25,6 +25,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "https://interview-verse-ai-taupe.vercel.app",
     ],
     credentials: true,
   })
