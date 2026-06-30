@@ -1,9 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-[#09090B] pt-24">
       {/* Background Glow */}
       <div className="absolute left-20 top-20 h-72 w-72 rounded-full bg-violet-600/20 blur-[120px]" />
-      <div className="absolute right-20 bottom-20 h-72 w-72 rounded-full bg-cyan-500/20 blur-[120px]" />
+      <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-cyan-500/20 blur-[120px]" />
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
 
@@ -32,11 +36,17 @@ const Hero = () => {
 
           <div className="mt-10 flex gap-4">
 
-            <button className="rounded-xl bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-700">
+            <button
+              onClick={() => navigate("/register")}
+              className="rounded-xl bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-700"
+            >
               Start Free
             </button>
 
-            <button className="rounded-xl border border-zinc-700 px-8 py-4 font-semibold text-white transition hover:border-violet-500">
+            <button
+              onClick={() => navigate("/login")}
+              className="rounded-xl border border-zinc-700 px-8 py-4 font-semibold text-white transition hover:border-violet-500"
+            >
               Watch Demo
             </button>
 
@@ -47,7 +57,7 @@ const Hero = () => {
         {/* Right Side */}
         <div className="relative">
 
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-2xl">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-xl">
 
             <h2 className="mb-6 text-xl font-bold text-white">
               Live Interview Dashboard
