@@ -2,7 +2,8 @@
 export const API_URL =
   import.meta.env.VITE_API_URL ||
   "http://localhost:5000";
-
+console.log("VITE_API_URL =", import.meta.env.VITE_API_URL);
+console.log("API_URL =", API_URL);
 export interface CareerRoadmap {
   readinessScore: number;
   missingSkills: string[];
