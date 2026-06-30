@@ -1,5 +1,6 @@
 import { API_URL } from "@/config/api";
 
+
 /* ==========================================================
    Interfaces
 ========================================================== */
@@ -74,7 +75,8 @@ export const evaluateInterview = async (
   answers: string[]
 ): Promise<InterviewEvaluation> => {
   const response = await fetch(
-    `${API_URL}/api/ai/interview/evaluate`,
+    `${API_URL}/api/ai/interview/evaluate`
+    ,
     {
       method: "POST",
       headers: {

@@ -1,3 +1,4 @@
+import { API_URL } from "@/config/api";
 export interface CodingQuestion {
   title: string;
   company: string;
@@ -52,7 +53,7 @@ export const generateCodingQuestion = async (
 ): Promise<CodingQuestion> => {
 
   const response = await fetch(
-    "http://localhost:5000/api/ai/coding/question",
+    `${API_URL}/api/ai/coding/question`,
     {
       method: "POST",
 
@@ -87,7 +88,7 @@ export const reviewCode = async (
 ): Promise<CodeReview> => {
 
   const response = await fetch(
-    "http://localhost:5000/api/ai/coding/review",
+    `${API_URL}/api/ai/coding/review`,
     {
       method: "POST",
 
